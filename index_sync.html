@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Synchronous Calls</title>
+</head>
+<style>
+    ul, li {
+        list-style: none;
+    }
+</style>
+<script>
+    function doExecute() {
+        console.log('Requesting universities list from server....');
+        for (var i = 0; i < 5000000000; i++) {
+            var l = i * i;
+        }
+        console.log('Universities fetch Completed....');
+        console.log('Requesting students list from server....');
+        for (var j = 0; j < 5000000000; j++) {
+            var g = j * i;
+        }
+        console.log('Students fetch Completed....');
+        console.log('Requesting subjects list from server....');
+        for (var k = 0; k < 5000000000; k++) {
+            var m = k * k;
+        }
+        console.log('Subjects fetch Completed...');
+    }
+
+    function showErrorMessage() {
+        alert('this is an error message!')
+    }
+
+    function logToConsole() {
+        console.log('Hello there how are you ?')
+    }
+
+</script>
+<body>
+<ul>
+    <li>var universities = $.getSyncAllUniversities()</li>
+    <li>var students = $.getSyncAllStudents()</li>
+    <li>var subjects = $.getSyncAllSubjects()</li>
+</ul>
+<button style="background-color:blue;color: red" onclick="doExecute()" id="btn">Run Code</button>
+
+<br>
+<br>
+<button onclick="logToConsole()">Log Hello To Console</button>
+<button onclick="showErrorMessage()">ShowErrorMessage</button>
+</body>
+</html>
